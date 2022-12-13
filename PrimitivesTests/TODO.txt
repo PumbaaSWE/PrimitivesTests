@@ -1,0 +1,6 @@
+﻿* Shapes should not know thier own world location or rotation, should be in a transform struct/class
+* Implement Hull fully
+* Implement Capsule fully
+* Implement SAT and/or GJK for overlap test
+* More intermediate primitive tests such as distance line segment to line segment -> new separate static tests class?
+* Draw Method for general shapes, shapes will not have their own draw methods as they are hitboxes! drawing for debug only.. -> make class!

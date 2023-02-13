@@ -23,5 +23,22 @@ namespace PrimitivesTests.Primitives
             float y = Math.Clamp(point.Y, center.Y - extents.Y, center.Y + extents.Y);
             return new Vector2(x, y);
         }
+
+        public bool Overlap(AABB other)
+        {
+            Vector2 dist = other.center - center;
+            if (Math.Abs(dist.X) > extents.X + other.extents.X) return false;
+            if (Math.Abs(dist.Y) > extents.Y + other.extents.Y) return false;
+            return true;
+        }
+
+        //please verify this function!
+        public bool Contains(AABB other)
+        {
+            Vector2 dist = other.center - center;
+            if (Math.Abs(dist.X) + other.extents.X > extents.X) return false;
+            if (Math.Abs(dist.Y) + other.extents.Y > extents.Y) return false;
+            return true;
+        }
     }
 }
